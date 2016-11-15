@@ -5,11 +5,8 @@ module ramdecoder(
 	);
 
 always_comb begin
-	for(int bit_in_word = 0; bit_in_word < 1024; bit_in_word++) begin
- 		MEM[bit_in_word] = 0;
- 		if (bit_in_word==A)
- 			MEM[bit_in_word] = 1;
-	end
+ 	MEM = 0;
+ 	MEM[A] = 1;
 end 
 	
 endmodule
