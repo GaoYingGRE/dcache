@@ -27,7 +27,7 @@ dcachemem dmem(
 	.tag_in(dmem_tag),
 	.index_in(dmem_index),
 
-# output
+	// output
 	.data_out(cachemem_data),
 	.dirty(cachemem_dirty),
 	.miss(cachemem_miss),
@@ -36,9 +36,9 @@ dcachemem dmem(
 	);
 
 dcachecontroller dcontroller(
-		# //response is for the new one
+	//response is for the new one
 	.Dmem2proc_response,
-	# //tag is for the finished one
+	//tag is for the finished one
 	.Dmem2proc_tag,
 	.Dmem2proc_data(Dmem2proc_data),
 	
@@ -51,7 +51,7 @@ dcachecontroller dcontroller(
 	.cachemem_tag(cachemem_tag),
 	.cachemem_index(cachemem_index),
 	
-	# output
+	//output
 	.proc2Dmem_command(proc2Dmem_command),
 	.proc2Dmem_addr(proc2Dmem_addr),
 	

@@ -12,8 +12,8 @@ module dcachemem(
 	output	dirty_index
 );
 
-# here we have 1bit for valid, 1bit for dirty, 64 bit for data, 
-# since we have 4-way associate cache, we will use 2 bit for index, 1KB cache, so 
+// here we have 1bit for valid, 1bit for dirty, 64 bit for data, 
+// since we have 4-way associate cache, we will use 2 bit for index, 1KB cache, so 
 
 logic [`DCACHE_INDEX_SIZE-1:0][`DCACHE_WAY_SIZE-1:0][`DCACHE_BLOCK_SIZE-1:0] internal_data;
 logic [`DCACHE_INDEX_SIZE-1:0][`DCACHE_WAY_SIZE-1:0][`DCACHE_BLOCK_SIZE-1:0] n_internal_data;
@@ -72,7 +72,7 @@ always_comb begin
 
 	if(miss==1) begin
 		tmp_way = internal_reference[index_in][0]==0 ? 0:1;
-		# evict 1
+		// evict 1
 		if(read_enable || write_enable) begin
 			dirty = internal_dirty[index_in][tmp_way];
 			data_out = internal_data[index_in][tmp_way];
